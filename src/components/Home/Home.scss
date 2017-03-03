@@ -1,0 +1,23 @@
+.home-div {
+  margin-top: 40px;
+
+  .loader {
+    position:absolute;
+    top:50%;
+    left: -webkit-calc(50% - 39px);
+    left:    -moz-calc(50% - 39px);
+    left:         calc(50% - 39px);
+  }
+
+  .analysis-table {
+    text-align: left;
+  }
+
+  .glyphicon-remove{
+    color: #ff4444;
+  }
+
+  .glyphicon-ok{
+    color:#00C851;
+  }
+}
