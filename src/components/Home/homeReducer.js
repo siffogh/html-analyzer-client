@@ -5,6 +5,8 @@ const homeReducer = (state = {
   switch (action.type) {
     case 'GOT_ANALYSIS':
       return Object.assign({}, state, { analysis: action.content });
+    case 'REMOVE_ANALYSIS':
+      return Object.assign({}, state, { analysis: undefined });
     case 'SHOW_LOADER':
       return Object.assign({}, state, { loader: true });
     case 'HIDE_LOADER':

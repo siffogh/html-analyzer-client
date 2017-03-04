@@ -25,11 +25,16 @@ const convertObjJSX = (o) => {
   );
 };
 
-export default ({ content }) => (
-  <div className="analysis-table">
-    <ul className="list-group">
-      {convertObjJSX(content)}
-    </ul>
-  </div>
-);
+export default ({ content }) => {
+  if (!content) {
+    return (<span />);
+  }
+  return (
+    <div className="analysis-table">
+      <ul className="list-group">
+        {convertObjJSX(content)}
+      </ul>
+    </div>
+  );
+};
 

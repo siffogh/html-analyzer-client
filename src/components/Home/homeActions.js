@@ -5,6 +5,10 @@ export const gotAnalysis = content => ({
   content,
 });
 
+export const removeAnalysis = () => ({
+  type: 'REMOVE_ANALYSIS',
+});
+
 export const showLoader = () => ({
   type: 'SHOW_LOADER',
 });
@@ -15,6 +19,7 @@ export const hideLoader = () => ({
 
 export const analyzeLink = link => (dispatch) => {
   dispatch(showLoader());
+  dispatch(gotAnalysis());
   return getAnalysis(link).then(({ data }) => {
     dispatch(hideLoader());
     dispatch(gotAnalysis(data.content));
