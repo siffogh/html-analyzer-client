@@ -1,26 +1,19 @@
-FROM nginx
+FROM node:6.3.0
 ARG BUILD_ENV
 
-# install node
-RUN apt-get update
-RUN apt-get install -y curl
-RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
-RUN apt-get install -y nodejs
-
+# Create app directory
 RUN mkdir -p /app
 WORKDIR /app
 
 # Install app dependencies
-COPY package.json .
+COPY package.json /app
 RUN npm install
 
-# Bundle app source
-COPY . .
+# copy source files
+COPY . /app
 
 RUN echo "module.exports = require('./config.$BUILD_ENV');" > config/index.js
 
-RUN forever start -c "npm run build" .
+EXPOSE 3000
 
-COPY nginx/conf.d /etc/nginx/conf.d
-
-EXPOSE 80
+CMD npm run build
