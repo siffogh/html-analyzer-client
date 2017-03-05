@@ -19,7 +19,7 @@ COPY . .
 
 RUN echo "module.exports = require('./config-$BUILD_ENV');" > config/config.js
 
-RUN npm run build
+RUN forever start -c "npm run build" .
 
 COPY nginx/conf.d /etc/nginx/conf.d
 
