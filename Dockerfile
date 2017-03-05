@@ -17,7 +17,7 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-RUN echo "module.exports = require('./config-$BUILD_ENV');" > config/config.js
+RUN echo "module.exports = require('./config.$BUILD_ENV');" > config/index.js
 
 RUN npm run build
 
