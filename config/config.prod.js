@@ -1,4 +1,4 @@
 module.exports = {
   port: 3000,
-  apiServer: 'http://54.213.85.162:8000',
+  apiServer: 'http://54.186.149.12:8000',
 }
