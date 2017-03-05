@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import cookie from 'react-cookie';
 
 import * as homeActions from './homeActions';
 import { logoutUser } from '../App/appActions';

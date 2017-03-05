@@ -1,4 +1,5 @@
 import axios from 'axios';
+import cookie from 'react-cookie';
 
 const apiServer = 'http://localhost:8000';
 
@@ -6,6 +7,13 @@ const client = axios.create({
   baseURL: `${apiServer}/api/`,
 });
 
+client.interceptors.request.use((config) => {
+  const token = cookie.load('token');
+  if (token) {
+    config.headers.common['Authorization'] = `Bearer ${token}`;
+  }
+  return config;
+});
 export const getAnalysis = link => client.post('analyze', { link });
 
 export const signup = user => client.post('signup', user);
