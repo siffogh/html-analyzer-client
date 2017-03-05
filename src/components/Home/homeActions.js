@@ -15,6 +15,7 @@ export const removeAnalysis = () => ({
 
 export const showLoader = () => ({
   type: 'SHOW_LOADER',
+  loaderMsg: 'Please notice that the request might take arount 30 secs depending on the links present in the target html.'
 });
 
 export const hideLoader = () => ({

@@ -10,9 +10,9 @@ const homeReducer = (state = {
     case 'REMOVE_ANALYSIS':
       return Object.assign({}, state, { analysis: undefined });
     case 'SHOW_LOADER':
-      return Object.assign({}, state, { loader: true });
+      return Object.assign({}, state, { loader: true, loaderMsg: action.loaderMsg });
     case 'HIDE_LOADER':
-      return Object.assign({}, state, { loader: false });
+      return Object.assign({}, state, { loader: false, loaderMsg: undefined });
     default:
       console.log('state: ', state);
       return state;

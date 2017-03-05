@@ -30,6 +30,7 @@ class HomePage extends React.Component {
 
   render() {
     let panelBody = '';
+    let loaderMsg = '';
     if (!this.props.home.loader) {
       panelBody = (
         <div className="panel-body">
@@ -47,6 +48,9 @@ class HomePage extends React.Component {
         </div>
       );
     }
+    if (this.props.home.loaderMsg) {
+      loaderMsg = (<p className="feedback alert-info">{this.props.home.loaderMsg}</p>);
+    }
     return (
       <div className="home-div panel panel-default">
         <Loader color="#428bca" size="16px" margin="10px" display={this.props.home.loader} />
@@ -60,6 +64,7 @@ class HomePage extends React.Component {
             <ul className="dropdown-menu" aria-labelledby="dropdownBtn">
               <li><a onClick={this.props.actions.logoutUser}>Logout</a></li>
             </ul>
+            {loaderMsg}
           </div>
         </div>
         {panelBody}
