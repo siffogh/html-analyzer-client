@@ -2,8 +2,6 @@ import axios from 'axios';
 import cookie from 'react-cookie';
 import { apiServer } from '../../config';
 
-
-
 const client = axios.create({
   baseURL: `${apiServer}/api/`,
 });
