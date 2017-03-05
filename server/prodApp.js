@@ -1,7 +1,8 @@
 import express from 'express';
 import path from 'path';
 
-const port = 3000;
+import { port } from '../../config';
+
 const app = express();
 
 

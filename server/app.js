@@ -3,9 +3,10 @@ import webpack from 'webpack';
 import cors from 'cors';
 import path from 'path';
 
+import { port } from '../../config';
 import config from '../webpack.config.dev';
 
-const port = 3000;
+
 const app = express();
 const compiler = webpack(config);
 
