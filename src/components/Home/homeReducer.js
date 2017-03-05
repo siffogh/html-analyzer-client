@@ -4,7 +4,9 @@ const homeReducer = (state = {
 }, action) => {
   switch (action.type) {
     case 'GOT_ANALYSIS':
-      return Object.assign({}, state, { analysis: action.content });
+      return Object.assign({}, state, { analysis: action.content, analysisFail: undefined });
+    case 'ANALYSIS_FAIL':
+      return Object.assign({}, state, { analysisFail: action.failError });
     case 'REMOVE_ANALYSIS':
       return Object.assign({}, state, { analysis: undefined });
     case 'SHOW_LOADER':

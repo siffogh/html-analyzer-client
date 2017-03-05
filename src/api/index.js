@@ -7,3 +7,7 @@ const client = axios.create({
 });
 
 export const getAnalysis = link => client.post('analyze', { link });
+
+export const signup = user => client.post('signup', user);
+
+export const login = user => client.post('login', user);

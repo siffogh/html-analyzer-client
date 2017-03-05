@@ -2,6 +2,7 @@ import express from 'express';
 import webpack from 'webpack';
 import cors from 'cors';
 import path from 'path';
+
 import config from '../webpack.config.dev';
 
 const port = 3000;

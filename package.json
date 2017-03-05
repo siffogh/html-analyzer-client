@@ -29,6 +29,7 @@
     "halogen": "^0.2.0",
     "jquery": "2.2.3",
     "react": "15.0.2",
+    "react-cookie": "^1.0.4",
     "react-dom": "15.0.2",
     "react-redux": "4.4.5",
     "react-router": "2.4.0",
