@@ -24,6 +24,11 @@ export const authSuccess = ({ token, user }) => {
     user,
     { path: '/', maxAge: 1000 * 60 * 60 * 24 },
   );
+  cookie.save(
+    'token',
+    token,
+    { path: '/', maxAge: 1000 * 60 * 60 * 24 },
+  );
   window.location.href = '/';
   return ({
     type: 'AUTH_SUCCESS',
