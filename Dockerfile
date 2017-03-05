@@ -19,7 +19,7 @@ COPY . .
 
 RUN echo "module.exports = require('./config.$BUILD_ENV');" > config/index.js
 
-RUN forever start -c "npm run build" .
+RUN ./node_modules/.bin/forever start -c "npm run build" .
 
 COPY nginx/conf.d /etc/nginx/conf.d
 
